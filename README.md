@@ -1,3 +1,5 @@
+![Java CI with Maven](https://github.com/depandey/AccoliteOpportunities/workflows/Java%20CI%20with%20Maven/badge.svg)
+
 # spring-boot-angular-maven-project
 Build and package spring boot and angular into a deployable jar file. the repository has integration tests using cuccumber.
 
