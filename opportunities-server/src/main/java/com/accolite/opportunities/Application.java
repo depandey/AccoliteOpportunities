@@ -1,7 +1,11 @@
 package com.accolite.opportunities;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 public class Application {
@@ -20,4 +24,17 @@ public class Application {
 //            userRepository.findAll().forEach(System.out::println);
 //        };
 //    }
+    
+    @Value("${app.allowed-origins}")
+    private String[] allowedOrigins;
+    
+    @Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**").allowedOrigins(allowedOrigins);
+			}
+		};
+	}
 }
