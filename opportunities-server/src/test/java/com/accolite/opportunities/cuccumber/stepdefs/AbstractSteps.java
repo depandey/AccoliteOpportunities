@@ -8,14 +8,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.server.LocalServerPort;
 
-import com.accolite.opportunities.OpportunitiesApplicationIntegrationTests;
+import com.accolite.opportunities.OpportunitiesApplicationTestsIT;
 import com.accolite.opportunities.cuccumber.CucumberTestContext;
 
 /**
  * Class that abstract test context management and REST API invocation.
  *
  */
-public class AbstractSteps extends OpportunitiesApplicationIntegrationTests {
+public class AbstractSteps extends OpportunitiesApplicationTestsIT {
 
   private static final Logger LOG = LoggerFactory.getLogger(AbstractSteps.class);
 
